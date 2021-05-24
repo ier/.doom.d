@@ -49,4 +49,5 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+;; The Clojure Interactive Development Environment that Rocks
 (package! cider)
