@@ -55,11 +55,3 @@
 
 ;; Maxiimize Emacs frame on startup
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-
-;; Treemacs settings go here
-;;(use-package treemacs
-;;  :config
-;;  ;; highlight current line in fringe for treemacs window
-;;  (treemacs-fringe-indicator-mode)
-;;  (treemacs-follow-mode t)
-;;  (treemacs-filewatch-mode 1))
