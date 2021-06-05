@@ -1,3 +1,5 @@
 # Doom configuration
 
-TBD L8R
+My current Doom Emacs config. 
+
+Here is [the script](https://github.com/ier/dotfiles/blob/main/scripts/redoom.sh) which will help to reinstall Doom Emacs on your machine if something will go wrong.
