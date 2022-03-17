@@ -55,3 +55,40 @@
 
 ;; Maxiimize Emacs frame on startup
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; HS
+(map! (:localleader
+       (:map (clojure-mode-map clojurescript-mode-map)
+        "=" #'cider-format-defun
+        "+" #'clojure-align
+        (:prefix ("e" . "eval")
+         "f" #'cider-eval-defun-at-point
+         "F" #'cider-insert-defun-in-repl
+         ";" #'cider-pprint-eval-last-sexp)
+        (:prefix ("i")
+         "p" #'cider-inspector-pop))
+       (:map (sql-mode-map)
+        "e" #'run-sql))
+      (:leader
+       (:map (clojure-mode-map clojurescript-mode-map emacs-lisp-mode-map)
+        (:prefix ("k" . "lisp")
+         "t" #'sp-transpose-sexp
+         "j" #'paredit-join-sexps
+         "c" #'paredit-split-sexp
+         "s" #'paredit-split-sexp
+         "d" #'sp-kill-sexp
+         "D" #'paredit-kill
+         "<" #'paredit-backward-barf-sexp
+         ">" #'paredit-backward-slurp-sexp
+         "." #'paredit-forward-slurp-sexp
+         "," #'paredit-forward-barf-sexp
+         "r" #'paredit-raise-sexp
+         "w" #'paredit-wrap-sexp
+         "(" #'paredit-wrap-round
+         "[" #'paredit-wrap-square
+         "'" #'paredit-meta-doublequote
+         "{" #'paredit-wrap-curly
+         "y" #'sp-copy-sexp)))
+      (:after ivy
+       :map ivy-minibuffer-map
+       "C-d" #'ivy-switch-buffer-kill))
