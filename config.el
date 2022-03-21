@@ -92,3 +92,11 @@
       (:after ivy
        :map ivy-minibuffer-map
        "C-d" #'ivy-switch-buffer-kill))
+
+(after! cider
+  (set-popup-rules!
+   '(("^\\*cider-repl"
+      :side right
+      :width 100
+      :quit nil
+      :ttl nil))))
