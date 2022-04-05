@@ -93,6 +93,7 @@
        :map ivy-minibuffer-map
        "C-d" #'ivy-switch-buffer-kill))
 
+;; Show Cider in the right side of screen
 (after! cider
   (set-popup-rules!
    '(("^\\*cider-repl"
@@ -100,3 +101,9 @@
       :width 100
       :quit nil
       :ttl nil))))
+
+;; Toggle between unit test and implementaation
+(map! :leader
+      (:prefix-map ("p" . "project")
+       :desc "implementation <-> test"
+       "a" #'projectile-toggle-between-implementation-and-test))
