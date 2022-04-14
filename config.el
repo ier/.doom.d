@@ -102,8 +102,11 @@
       :quit nil
       :ttl nil))))
 
-;; Toggle between unit test and implementaation
+;; Toggle between unit test and implementation
 (map! :leader
-      (:prefix-map ("p" . "project")
+      (:prefix-map ("t" . "toggle")
        :desc "implementation <-> test"
        "a" #'projectile-toggle-between-implementation-and-test))
+
+;; Specify Iosevka typeface
+(setq doom-font (font-spec :family "Iosevka" :size 15 :weight 'semi-light))
