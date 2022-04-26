@@ -74,7 +74,6 @@
         (:prefix ("k" . "lisp")
          "t" #'sp-transpose-sexp
          "j" #'paredit-join-sexps
-         "c" #'paredit-split-sexp
          "s" #'paredit-split-sexp
          "d" #'sp-kill-sexp
          "D" #'paredit-kill
