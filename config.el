@@ -108,4 +108,33 @@
        "a" #'projectile-toggle-between-implementation-and-test))
 
 ;; Specify Iosevka typeface
-(setq doom-font (font-spec :family "Iosevka" :size 15 :weight 'semi-light))
+(setq doom-font (font-spec :family "Iosevka" :size 16 :weight 'semi-light))
+
+;; Inserts function for handy RDD process
+(defun clj-insert-persist-scope-macro ()
+  (interactive)
+  (insert
+   "(defmacro persist-scope
+      \"Takes local scope vars and defines them in the global scope.
+        Could be useful for RDD.\"
+      []
+      `(do ~@(map
+              (fn [v] `(def ~v ~v))
+              (keys (cond-> &env (contains? &env :locals) :locals))))) "))
+
+;; Evaluate persist scope
+(defun persist-scope ()
+  (interactive)
+  (let ((beg (point)))
+    (clj-insert-persist-scope-macro)
+    (cider-eval-region beg (point))
+    (delete-region beg (point))
+    (insert "(persist-scope)")
+    (cider-eval-defun-at-point)
+    (delete-region beg (point))))
+
+;; Toggle Persist-scope
+(map! :leader
+      (:prefix-map ("t" . "toggle")
+       :desc "Persist scope"
+       "p" #'persist-scope))
