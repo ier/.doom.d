@@ -138,3 +138,10 @@
       (:prefix-map ("t" . "toggle")
        :desc "Persist scope"
        "p" #'persist-scope))
+
+;; https://emacsredux.com/blog/2013/06/13/using-emacs-as-a-database-client/
+(setq sql-postgres-login-params
+      '((user :default "postgres")
+        (database :defaut "postgres")
+        (server :default "localhost")
+        (port :default 5432)))
