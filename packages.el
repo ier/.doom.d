@@ -51,5 +51,3 @@
 
 ;; The Clojure Interactive Development Environment that Rocks
 (package! cider)
-(package! lsp-mode)
-(package! flycheck-clj-kondo)
