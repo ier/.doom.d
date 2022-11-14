@@ -145,3 +145,6 @@
         (database :defaut "postgres")
         (server :default "localhost")
         (port :default 5432)))
+
+(setq sql-mariadb-login-params
+      '(potr :default 3306))
