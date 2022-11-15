@@ -56,7 +56,6 @@
 ;; Maxiimize Emacs frame on startup
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;; HS
 (map! (:localleader
        (:map (clojure-mode-map clojurescript-mode-map)
         "=" #'cider-format-defun
