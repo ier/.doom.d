@@ -149,3 +149,7 @@
       '(potr :default 3306))
 
 (setq projectile-create-missing-test-files t)
+
+(after! sly
+   (setq sly-lisp-implementations
+         '((sbcl ("/usr/bin/sbcl")))))
