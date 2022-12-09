@@ -119,7 +119,7 @@
       []
       `(do ~@(map
               (fn [v] `(def ~v ~v))
-              (keys (cond-> &env (contains? &env :locals) :locals))))) "))
+              (keys (cond-> &env (contains? &env :locals) :locals)))))"))
 
 ;; Evaluate persist scope
 (defun persist-scope ()
