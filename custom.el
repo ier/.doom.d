@@ -6,7 +6,7 @@
  '(ignored-local-variable-values '((cider-clojure-cli-aliases . "-A:test:build")))
  '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(package-selected-packages
-   '(speed-type doom-modeline flycheck-clj-kondo lsp-mode cider)))
+   '(doom-modeline flycheck-clj-kondo lsp-mode cider)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
