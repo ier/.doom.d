@@ -95,7 +95,7 @@
 (after! cider
   (set-popup-rules!
    '(("^\\*cider-repl"
-      :side right
+      :side left
       :width 100
       :quit nil
       :ttl nil))))
