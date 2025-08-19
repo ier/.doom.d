@@ -145,9 +145,6 @@
         (server :default "localhost")
         (port :default 5432)))
 
-(setq sql-mariadb-login-params
-      '(potr :default 3306))
-
 (setq projectile-create-missing-test-files t)
 
 (after! sly
